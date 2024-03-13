@@ -1,5 +1,7 @@
 #usuarios = {"Juan": "12345"}  # Usuario y contraseña
+import unittest
 from datetime import datetime
+from your_module import ImplanteMedico 
 
 class ImplanteMedico:
     def __init__(self, tipo, material, tamaño):
@@ -295,8 +297,17 @@ class Menu:
                   f"Paciente: {info['paciente']}\n"
                   f"Fecha de Implante: {info['fecha_implantacion']}\n"
                   f"Vida útil: {vida_util.days} días\n")
+            
+class TestImplanteMedico(unittest.TestCase):
+    def test_calculate_volume(self):
+        implante = ImplanteMedico("Tipo", "Material", "Tamaño")
+        volumen_calculado = implante.calcular_volumen()
+        volumen_esperado = 100  # Solo un ejemplo, reemplaza esto con el valor esperado
+        self.assertEqual(volumen_calculado, volumen_esperado, "El volumen calculado no es el esperado")
+
 
 if __name__ == "__main__":
+    unittest.main()
     main()
     menu = Menu()
     while menu.usuario_actual is None:
