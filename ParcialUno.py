@@ -7,6 +7,22 @@ class ImplanteMedico:
         self.material = material
         self.tamaño = tamaño
 
+    @property
+    def tipo(self):
+        return self._tipo
+
+    @tipo.setter
+    def tipo(self, value):
+        self._tipo = value
+
+    @property
+    def material(self):
+        return self._material
+
+    @material.setter
+    def material(self, value):
+        self._material = value
+
     def __str__(self):
         return f"Tipo: {self.tipo}\nMaterial: {self.material}\nTamaño: {self.tamaño}"
     def calcular_volumen(self):
