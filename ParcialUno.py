@@ -9,6 +9,17 @@ class ImplanteMedico:
 
     def __str__(self):
         return f"Tipo: {self.tipo}\nMaterial: {self.material}\nTamaño: {self.tamaño}"
+    def calcular_volumen(self):
+        volumen = 0  
+        return volumen
+
+
+def main():
+    implante = ImplanteMedico("Implante", "Material", "Tamaño")
+    print("Información del implante:")
+    print(implante)
+    print("Volumen del implante:", implante.calcular_volumen())
+
 
 class Marcapasos(ImplanteMedico):
     def __init__(self, tipo, material, tamaño, electrodos, inalambrico, frecuencia_estimulacion):
@@ -261,9 +272,10 @@ class Menu:
                   f"Fecha de Implante: {info['fecha_implantacion']}\n"
                   f"Vida útil: {vida_util.days} días\n")
 
-
-menu = Menu()
-while menu.usuario_actual is None:
-    menu.iniciar_sesion()
-if menu.usuario_actual is not None:
-    menu.mostrar_menu_principal()
+if __name__ == "__main__":
+    main()
+    menu = Menu()
+    while menu.usuario_actual is None:
+        menu.iniciar_sesion()
+    if menu.usuario_actual is not None:
+        menu.mostrar_menu_principal()
