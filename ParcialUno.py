@@ -1,4 +1,4 @@
-
+#usuarios = {"Juan": "12345"}  # Usuario y contraseña
 from datetime import datetime
 
 class ImplanteMedico:
